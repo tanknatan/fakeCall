@@ -41,7 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
-        viewBinding = true
+
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -55,12 +55,24 @@ android {
 
 dependencies {
 
-    implementation ("androidx.compose.ui:ui:1.6.8")
-    implementation ("androidx.compose.material:material:1.6.8")
-    implementation ("androidx.compose.ui:ui-tooling-preview:1.6.8")
-    implementation ("androidx.navigation:navigation-compose:2.7.7")
-    implementation ("androidx.activity:activity-compose:1.9.1")
 
+
+
+    // CameraX core library
+    implementation ("androidx.camera:camera-core:1.3.4")
+    implementation ("androidx.camera:camera-camera2:1.3.4")
+    implementation ("androidx.camera:camera-lifecycle:1.3.4")
+    // CameraX View library
+    implementation ("androidx.camera:camera-view:1.3.4")
+
+
+    val compose_material3 = ("1.0.0-rc01")
+
+    implementation ("com.airbnb.android:lottie-compose:6.3.0")
+    implementation ("androidx.navigation:navigation-compose:2.7.7")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2")
+    implementation ("androidx.navigation:navigation-compose:2.5.3")
+    implementation ("com.google.android.material:material:1.12.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -69,6 +81,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,4 +89,16 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation ("androidx.compose.ui:ui:1.4.0")
+    implementation ("androidx.compose.material:material:1.4.0")
+    implementation ("androidx.compose.ui:ui-tooling-preview:1.4.0")
+    implementation ("androidx.activity:activity-compose:1.5.0")
+
+//    implementation ("com.google.accompanist:accompanist-wheel-picker:0.27.0")
+
+
+
+    //material3 releases
+    implementation ("androidx.compose.material3:material3:$compose_material3")
 }
